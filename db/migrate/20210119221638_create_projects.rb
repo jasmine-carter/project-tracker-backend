@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[6.1]
       t.string :name
       t.float :cost
       t.string :description
-      t.completed :boolean
+      t.boolean :completed
       t.string :image
 
       t.timestamps
