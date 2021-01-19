@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_222010) do
+ActiveRecord::Schema.define(version: 2021_01_19_233500) do
 
   create_table "materials", force: :cascade do |t|
     t.string "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_01_19_222010) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
-    t.float "cost"
+    t.float "cost", default: 0.0
     t.string "description"
     t.boolean "completed"
     t.string "image"
