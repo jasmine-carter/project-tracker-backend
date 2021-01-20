@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_234354) do
+ActiveRecord::Schema.define(version: 2021_01_19_234833) do
 
   create_table "materials", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
     t.float "cost", default: 0.0
-    t.boolean "purchased"
+    t.boolean "purchased", default: false
     t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_01_19_234354) do
     t.string "name"
     t.float "cost", default: 0.0
     t.string "description"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
