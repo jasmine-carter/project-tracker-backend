@@ -19,9 +19,11 @@ class Api::V1::MaterialsController < ApplicationController
   def create
     @material = Material.new(material_params)
     if @material.save
+      @project.update_total_cost
       render json: @material
     else
-      render json: {error: 'Error creating your material'}#create more specific error handling
+      render json: {error: 'Error creating your project''s material'}#create more specific error handling
+    end
   end
 
 
