@@ -8,6 +8,7 @@ class Api::V1::MaterialsController < ApplicationController
         render json: @materials
       else
         render json: {error: "This project has no materials yet, add some?"}
+      end
   end
 
   def show
