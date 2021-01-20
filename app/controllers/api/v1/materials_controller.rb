@@ -10,6 +10,11 @@ class Api::V1::MaterialsController < ApplicationController
         render json: {error: "This project has no materials yet, add some?"}
   end
 
+  def show
+    @material = @project.materials.find_by(id: params[:id])
+    render json: @material
+  end
+
 
   def create
     @material = Material.new(material_params)
@@ -21,7 +26,8 @@ class Api::V1::MaterialsController < ApplicationController
 
 
   def destroy
-
+    @material = @project.materials.find_by(id: params[:id])
+    @material.destroy
   end
 
   private
