@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :materials
-      resources :projects
+      resources :projects do
+          resources :materials
+      end
     end
   end
 
