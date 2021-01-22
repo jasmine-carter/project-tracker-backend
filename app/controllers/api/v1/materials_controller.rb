@@ -18,7 +18,7 @@ class Api::V1::MaterialsController < ApplicationController
 
 
   def create
-    @material = Material.new(material_params)
+    @material = @project.materials.new(material_params)
     if @material.save
       @project.update_total_cost
       render json: @material
