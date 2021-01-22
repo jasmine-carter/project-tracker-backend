@@ -2,6 +2,7 @@ class Api::V1::ProjectsController < ApplicationController
 
 
   def index
+
     @projects = Project.all
     render json: @projects
   end
@@ -27,8 +28,10 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def destroy
+    #binding.pry
     @project = Project.find(params[:id])
     @project.destroy
+    render json: {message: 'deleted project'}
   end
 
 
