@@ -5,7 +5,8 @@ class Project < ApplicationRecord
 
   def update_total_cost
       self.materials.each do |material|
-      self.cost += material.cost
+        total_material_cost = material.cost * material.quantity
+      self.cost += total_material_cost
     end
   end
 
