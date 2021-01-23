@@ -30,6 +30,7 @@ class Api::V1::ProjectsController < ApplicationController
   def destroy
     #binding.pry
     @project = Project.find(params[:id])
+    @project.delete_project_materials
     @project.destroy
     render json: {message: 'deleted project'}
   end

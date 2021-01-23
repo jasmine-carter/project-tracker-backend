@@ -11,5 +11,11 @@ class Project < ApplicationRecord
     end
   end
 
+  def delete_project_materials
+    self.materials.each do |material|
+      material.destroy
+    end
+  end
+
 
 end
