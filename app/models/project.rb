@@ -9,6 +9,7 @@ class Project < ApplicationRecord
         total_material_cost = material.cost * material.quantity
       self.cost += total_material_cost
     end
+    self.cost.ceil(2)
   end
 
   def delete_project_materials
