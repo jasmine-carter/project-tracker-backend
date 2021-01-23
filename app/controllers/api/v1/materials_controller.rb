@@ -20,7 +20,6 @@ class Api::V1::MaterialsController < ApplicationController
   def create
     @material = @project.materials.new(material_params)
     if @material.save
-      binding.pry
       @project.update_total_cost
       @project.save
       render json: @project
@@ -33,6 +32,9 @@ class Api::V1::MaterialsController < ApplicationController
   def destroy
     @material = @project.materials.find_by(id: params[:id])
     @material.destroy
+    @project.update_total_cost
+    @project.save
+    render json: @project
   end
 
   private
