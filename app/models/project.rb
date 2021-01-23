@@ -17,5 +17,12 @@ class Project < ApplicationRecord
     end
   end
 
+  def update_completion_status
+    if self.completed != true
+      self.completed = true
+    else
+      self.completed = false
+    end
+  end
 
 end
