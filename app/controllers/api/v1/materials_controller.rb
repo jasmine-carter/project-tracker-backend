@@ -12,8 +12,8 @@ class Api::V1::MaterialsController < ApplicationController
   end
 
   def update
-    binding.pry
     @material = @project.materials.find_by(id: params[:id])
+    @material.update_purchased_status
     @material.save
     @project.save
     render json: @project

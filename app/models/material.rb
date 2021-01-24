@@ -7,7 +7,7 @@ class Material < ApplicationRecord
     if self.purchased != true
       self.purchased = true
     else
-      self.completed = false
+      self.purchased = false
     end
   end
 
