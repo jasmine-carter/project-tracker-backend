@@ -12,11 +12,10 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def create
-    binding.pry
     @comment = @project.comments.new(comment_params)
     @comment.save
     @project.save
-    render json: @project
+    render json: @comment
   end
 
   def destroy
