@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::V1::CommentsController < ApplicationController
 
   before_action :set_project
 
@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    binding.pry
     @comment = @project.comments.find_by(id: params[:id])
     @comment.save
     @project.save
