@@ -13,7 +13,7 @@ class Api::V1::CommentsController < ApplicationController
 
   def create
     binding.pry
-    @comment = @project.comments.find_by(id: params[:id])
+    @comment = @project.comments.new(comment_params)
     @comment.save
     @project.save
     render json: @project
