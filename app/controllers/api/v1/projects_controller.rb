@@ -24,7 +24,6 @@ class Api::V1::ProjectsController < ApplicationController
 
 
   def update
-    #binding.pry
     @project = Project.find(params[:id])
     @project.update_completion_status
     @project.save
