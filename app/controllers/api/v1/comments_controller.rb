@@ -3,12 +3,8 @@ class Api::V1::CommentsController < ApplicationController
   before_action :set_project
 
   def index
-    @comments = @projects.comments
-      if @comments.count >= 1
-        render json: @comments
-      else
-        render json: {error: "There are no comments here yet"}
-      end
+    @comments = @project.comments
+    render json: @comments
   end
 
   def create

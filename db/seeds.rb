@@ -8,7 +8,7 @@
 Project.destroy_all
 Material.destroy_all
 
-project = Project.create(name: "Macrame Table Runner", description: "Table runner for all seasons", completed: false)
+project = Project.create(name: "Macrame Table Runner", description: "Table runner for all seasons", completed: false, image: "https://i.etsystatic.com/9349246/r/il/aef16e/1310061587/il_1588xN.1310061587_3wpf.jpg")
 
 material = Material.create(name: "White Cording", project_id: project.id, cost: 15.30, purchased: false, quantity: 2)
 material2 = Material.create(name: "Dowel", project_id: project.id, cost: 0.50, purchased: false, quantity: 1)
