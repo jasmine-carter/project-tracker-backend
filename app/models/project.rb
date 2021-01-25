@@ -27,4 +27,10 @@ class Project < ApplicationRecord
     end
   end
 
+  def delete_project_comments
+    self.comments.each do |comment|
+      comment.destroy
+    end
+  end
+
 end
