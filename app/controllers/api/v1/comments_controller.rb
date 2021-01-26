@@ -18,7 +18,7 @@ class Api::V1::CommentsController < ApplicationController
     @comment = @project.comments.find_by(id: params[:id])
     @comment.destroy
     @project.save
-    render json: @project
+    render json: params[:id]
   end
 
   def set_project
